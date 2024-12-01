@@ -25,6 +25,11 @@ class CaixaEletronico{
         double valor = double.tryParse(stdin.readLineSync() ?? '') ?? 0.0;
         conta.depositar(valor);
         break;
+      case '3':
+        print('Digite o valor do saque:');
+        double valor = double.tryParse(stdin.readLineSync() ?? '') ?? 0.0;
+        conta.sacar(valor);
+        break;
       
         
 
