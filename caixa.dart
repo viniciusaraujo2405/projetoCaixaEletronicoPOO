@@ -20,6 +20,11 @@ class CaixaEletronico{
       case '1':
         conta.exibirSaldo();
         break;
+      case '2':
+        print('Digite o valor do depósito:');
+        double valor = double.tryParse(stdin.readLineSync() ?? '') ?? 0.0;
+        conta.depositar(valor);
+        break;
       
         
 
