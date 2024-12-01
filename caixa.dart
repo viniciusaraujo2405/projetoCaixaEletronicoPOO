@@ -37,6 +37,8 @@ class CaixaEletronico{
         continuar = false;
         print('Encerrando o programa.');
         break;
+      default:
+        print('Opção inválida. Tente novamente.');
     }
         
 
