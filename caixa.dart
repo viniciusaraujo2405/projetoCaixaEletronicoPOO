@@ -14,7 +14,8 @@ class CaixaEletronico{
     print("1 - Ver saldo");
     print("2 - Depositar");
     print("3 - Sacar");
-    print("4 - Sair");
+    print("4 - Transferir");
+    print("5 - Sair");
     print("Escolha uma opção:");
     String? escolha = stdin.readLineSync();
 
@@ -33,8 +34,16 @@ class CaixaEletronico{
         conta.sacar(valor);
         break;
       case '4':
-        continuar = false;
-        print('Encerrando o programa.');
+        print('Digite o titular da conta destino:');
+        String? titularDestino = stdin.readLineSync();
+        print('Digite o valor da transferência:');
+        double valorTransferencia = double.tryParse(stdin.readLineSync() ?? '') ?? 0.0;
+
+          
+        Conta contaDestino = Conta(nome: titularDestino ?? "Destinatário Desconhecido");
+
+          
+        conta.transferir(contaDestino, valorTransferencia);
         break;
       default:
         print('Opção inválida. Tente novamente.');
