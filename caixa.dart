@@ -45,6 +45,10 @@ class CaixaEletronico{
           
         conta.transferir(contaDestino, valorTransferencia);
         break;
+      case '5':
+      continuar = false;
+          print('Encerrando o programa.');
+          break;
       default:
         print('Opção inválida. Tente novamente.');
     }
