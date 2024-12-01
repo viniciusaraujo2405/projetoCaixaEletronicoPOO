@@ -7,6 +7,9 @@ class CaixaEletronico{
   CaixaEletronico(this.conta);
 
   void iniciar(){
+    bool continuar = true;
+
+    while(continuar){
     print("Bem vindo ao caixa eletrônico!!");
     print("Titular: ${conta.nome} | Saldo: ${conta.saldo}");
     print("1 - Ver saldo");
@@ -30,7 +33,11 @@ class CaixaEletronico{
         double valor = double.tryParse(stdin.readLineSync() ?? '') ?? 0.0;
         conta.sacar(valor);
         break;
-      
+      case '4':
+        continuar = false;
+        print('Encerrando o programa.');
+        break;
+    }
         
 
     }
